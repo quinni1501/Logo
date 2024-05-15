@@ -31,6 +31,7 @@ android {
 dependencies {
     implementation ("com.google.android.material:material:1.6.1")
     implementation ("androidx.viewpager2:viewpager2:1.0.0")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation ("androidx.viewpager:viewpager:1.0.0")
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
