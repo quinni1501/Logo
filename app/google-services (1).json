@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "862816138271",
+    "project_id": "film-f8b47",
+    "storage_bucket": "film-f8b47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862816138271:android:da4a405da6e10e6ef6d12a",
+        "android_client_info": {
+          "package_name": "vn.superandroid.logo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLsrPoNT3QKoU9TO5EDwsimSYireOao_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

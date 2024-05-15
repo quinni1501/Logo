@@ -81,6 +81,11 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Images(R.drawable.banner1));
         list.add(new Images(R.drawable.banner2));
         list.add(new Images(R.drawable.banner3));
+        list.add(new Images(R.drawable.banner4));
+        list.add(new Images(R.drawable.banner5));
+        list.add(new Images(R.drawable.banner6));
+        list.add(new Images(R.drawable.banner7));
+        list.add(new Images(R.drawable.banner8));
         return list;
     }
 }
