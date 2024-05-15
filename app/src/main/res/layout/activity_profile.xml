@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.ProfileActivity">
+    tools:context=".Activities.ProfileActivity">
 
     <TextView
         android:id="@+id/titleTxt"
@@ -21,8 +21,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView"
-        android:layout_width="184dp"
-        android:layout_height="226dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/profile"
         app:layout_constraintEnd_toEndOf="parent"
