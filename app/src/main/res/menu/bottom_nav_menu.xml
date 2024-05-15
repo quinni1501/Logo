@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_phim"
+        android:icon="@drawable/ic_phim"
+        android:title="Phim" />
+    <item
+        android:id="@+id/menu_khuyenmai"
+        android:icon="@drawable/ic_quatang"
+        android:title="Khuyến mãi" />
+    <item
+        android:id="@+id/menu_lichchieu"
+        android:icon="@drawable/ic_lichchieu"
+        android:title="Lịch chiếu hôm nay" />
+    <item
+        android:id="@+id/menu_logo"
+        android:icon="@drawable/logo"
+        android:title="TPQ Cinema" />
+    <item
+        android:id="@+id/menu_hoso"
+        android:icon="@drawable/ic_hoso"
+        android:title="Hồ sơ" />
+</menu>
