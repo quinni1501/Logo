@@ -46,7 +46,8 @@ dependencies {
     implementation ("me.relex:circleindicator:2.1.6")
     //Gson
     implementation ("com.google.code.gson:gson:2.10.1")
-    //Retrofit
+    //Retrofit & Network
     implementation ("com.squareup.retrofit2:retrofit:(insert latest version)")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:3.12.0")
 }

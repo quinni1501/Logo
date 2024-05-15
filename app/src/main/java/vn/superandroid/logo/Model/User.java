@@ -1,6 +1,8 @@
 package vn.superandroid.logo.Model;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private Integer userId;
     private String username;
     private String password;
@@ -72,5 +74,19 @@ public class User {
 
     public void setUserPhone(String userPhone) {
         this.userPhone = userPhone;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", userAvatar='" + userAvatar + '\'' +
+                ", userFullname='" + userFullname + '\'' +
+                ", userGender=" + userGender +
+                ", userEmail='" + userEmail + '\'' +
+                ", userPhone='" + userPhone + '\'' +
+                '}';
     }
 }

@@ -19,10 +19,12 @@ import me.relex.circleindicator.CircleIndicator3;
 import vn.superandroid.logo.DepthPageTransformer;
 import vn.superandroid.logo.ImagesViewPager2Adapter;
 import vn.superandroid.logo.Model.Images;
+import vn.superandroid.logo.Model.User;
 import vn.superandroid.logo.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    private User mUser;
     private ViewPager2 viewPager2;
     private CircleIndicator3 circleIndicator3;
     private List<Images> imagesList1;
@@ -74,6 +76,15 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        //Xử lý Bundle nhận được
+        Bundle bundleReceive = getIntent().getExtras();
+        if (bundleReceive != null) {
+            User user = (User) bundleReceive.get("object_user");
+            if (user != null) {
+                mUser = user;
+            }
+        }
     }
 
     private List<Images> getListImages() {

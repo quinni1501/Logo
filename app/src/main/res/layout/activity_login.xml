@@ -39,7 +39,7 @@
         app:layout_constraintTop_toBottomOf="@id/logoImageView" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/editTextUsername"
         android:layout_width="310dp"
         android:layout_height="50dp"
         android:drawableLeft="@drawable/username"
@@ -54,13 +54,14 @@
         app:layout_constraintVertical_bias="0.538" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/editTextPassword"
         android:layout_width="310dp"
         android:layout_height="50dp"
         android:drawableLeft="@drawable/password"
         android:drawablePadding="8dp"
         android:ems="10"
         android:hint="Password"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
