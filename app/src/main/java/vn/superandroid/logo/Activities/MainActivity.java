@@ -1,4 +1,4 @@
-package vn.superandroid.logo;
+package vn.superandroid.logo.Activities;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,7 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator3;
+import vn.superandroid.logo.DepthPageTransformer;
+import vn.superandroid.logo.ImagesViewPager2Adapter;
 import vn.superandroid.logo.Model.Images;
+import vn.superandroid.logo.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,96 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/login_background"
-    tools:context=".LoginActivity">
+    android:orientation="vertical"
+    android:background="@drawable/login_background">
 
-    <ImageView
-        android:id="@+id/logoImageView"
-        android:layout_width="260dp"
-        android:layout_height="229dp"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_margin="30dp" >
 
-    <!-- Đăng nhập hoặc tạo tài khoản -->
+        <ImageView
+            android:layout_width="217dp"
+            android:layout_height="217dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo" />
+    </LinearLayout>
 
-    <!-- Số điện thoại hoặc Email -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical" >
 
-    <!-- Tiếp tục Button -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Đăng nhập"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:textStyle="bold" />
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:hint="   Username"
+            android:textColorHint="#877878"
+            android:inputType="textPersonName"
+            android:drawableLeft="@drawable/ic_username" />
 
-    <TextView
-        android:id="@+id/titleTextView"
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="   Password"
+            android:layout_marginTop="8dp"
+            android:textColorHint="#877878"
+            android:inputType="textPassword"
+            android:drawableLeft="@drawable/ic_password" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Đăng nhập hoặc tạo tài khoản"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logoImageView" />
+        android:layout_gravity="center"
+        android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="310dp"
-        android:layout_height="50dp"
-        android:drawableLeft="@drawable/username"
-        android:drawablePadding="8dp"
-        android:ems="10"
-        android:hint="Username"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.538" />
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:backgroundTint="#DC0B0B" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/continueButton"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#A11818"
-        android:text="Login"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742" />
-
-    <Button
-        android:id="@+id/button4"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_border"
-        android:text="Are you new user? Sign up"
-        android:textColor="#EDEDF1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.838" />
+        android:orientation="horizontal"
+        android:layout_gravity="center" >
 
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="310dp"
-        android:layout_height="50dp"
-        android:drawableLeft="@drawable/password"
-        android:drawablePadding="8dp"
-        android:ems="10"
-        android:hint="Password"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.621" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_border"
+            android:text="Are you new user? Sign up"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+</LinearLayout>
