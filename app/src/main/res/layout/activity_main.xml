@@ -39,28 +39,43 @@
     </LinearLayout>
 
     <!-- ViewPager for Banner Images -->
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+    <LinearLayout
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-    <!-- Indicator for ViewPager -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpage2"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="16dp"/>
+        <!-- Indicator for ViewPager -->
+        <me.relex.circleindicator.CircleIndicator3
+            android:id="@+id/circle_indicator3"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="-5dp"
+            app:ci_gravity="center" />
+    </LinearLayout>
 
     <!-- RecyclerView for Movie List -->
     <LinearLayout
         android:id="@+id/indicatorLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewPager" />
+        app:layout_constraintTop_toBottomOf="@+id/banner"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
