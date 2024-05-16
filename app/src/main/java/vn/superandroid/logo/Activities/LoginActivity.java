@@ -19,6 +19,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import vn.superandroid.logo.Model.User;
 import vn.superandroid.logo.R;
+import vn.superandroid.logo.SharedPrefManager;
 import vn.superandroid.logo.api.RetrofitClient;
 import vn.superandroid.logo.api.UserService;
 
@@ -71,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                finish();
                 startActivity(intent);
             }
         });
@@ -101,17 +103,16 @@ public class LoginActivity extends AppCompatActivity {
                             mUser = user;
                             break;
                         }
-                        else {
-                            Toast.makeText(LoginActivity.this, "Sai tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show();
-                        }
                     }
                     if (isHasUser) {
+                        SharedPrefManager sharedPrefManager = new SharedPrefManager(LoginActivity.this);
+                        sharedPrefManager.setData(mUser);
                         //Chuyển vào MainActivity
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        Bundle bundle = new Bundle();
-                        bundle.putSerializable("object_user", mUser);           //đưa User vào MainActivity
-                        intent.putExtras(bundle);
+                        Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+                        finish();
                         startActivity(intent);
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Sai tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

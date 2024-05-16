@@ -32,7 +32,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
@@ -52,16 +52,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tài khoản: "
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp" /> <!-- Thêm khoảng cách -->
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Email:"
+                android:text="Họ và tên: "
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp" /> <!-- Thêm khoảng cách -->
@@ -76,13 +67,14 @@
                 android:layout_marginTop="8dp" /> <!-- Thêm khoảng cách -->
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ngày sinh:"
+                android:text="Email:"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="8dp" /> <!-- Thêm khoảng cách -->
+
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
@@ -101,7 +93,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/idTxt"
+                android:id="@+id/tvFullname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="little dinosaur"
@@ -109,7 +101,15 @@
                 android:layout_marginTop="8dp"/>
 
             <TextView
-                android:id="@+id/usernameTxt"
+                android:id="@+id/tvGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nam"
+                android:textSize="20sp"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/tvEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="animal@gmail.com"
@@ -117,22 +117,7 @@
                 android:layout_marginTop="8dp"/>
 
             <TextView
-                android:id="@+id/emailTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nam"
-                android:textSize="20sp"
-                android:layout_marginTop="8dp"/>
-            <TextView
-                android:id="@+id/dayTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="01/1/2004"
-                android:textSize="20sp"
-                android:layout_marginTop="8dp"/>
-
-            <TextView
-                android:id="@+id/genderTxt"
+                android:id="@+id/tvPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="0964607603"

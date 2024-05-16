@@ -6,6 +6,9 @@ android {
     namespace = "vn.superandroid.logo"
     compileSdk = 34
 
+    dataBinding {
+        enable = true
+    }
     defaultConfig {
         applicationId = "vn.superandroid.logo"
         minSdk = 24

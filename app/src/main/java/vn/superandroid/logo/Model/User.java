@@ -3,20 +3,20 @@ package vn.superandroid.logo.Model;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    private Integer userId;
+    private String userId;
     private String username;
     private String password;
     private String userAvatar;
     private String userFullname;
-    private Integer userGender;
+    private String userGender;
     private String userEmail;
     private String userPhone;
 
-    public Integer getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -52,11 +52,11 @@ public class User implements Serializable {
         this.userFullname = userFullname;
     }
 
-    public Integer getUserGender() {
+    public String getUserGender() {
         return userGender;
     }
 
-    public void setUserGender(Integer userGender) {
+    public void setUserGender(String userGender) {
         this.userGender = userGender;
     }
 
@@ -88,5 +88,16 @@ public class User implements Serializable {
                 ", userEmail='" + userEmail + '\'' +
                 ", userPhone='" + userPhone + '\'' +
                 '}';
+    }
+
+    public User(String userId, String username, String password, String userAvatar, String userFullname, String userGender, String userEmail, String userPhone) {
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+        this.userAvatar = userAvatar;
+        this.userFullname = userFullname;
+        this.userGender = userGender;
+        this.userEmail = userEmail;
+        this.userPhone = userPhone;
     }
 }

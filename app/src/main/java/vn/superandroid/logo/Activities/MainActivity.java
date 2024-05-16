@@ -23,7 +23,6 @@ import vn.superandroid.logo.Model.User;
 import vn.superandroid.logo.R;
 
 public class MainActivity extends AppCompatActivity {
-
     private User mUser;
     private ViewPager2 viewPager2;
     private CircleIndicator3 circleIndicator3;
