@@ -22,7 +22,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if(!sharedPrefManager.isLogedOut()){
-                    Intent intent = new Intent(SplashActivity.this, ProfileActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }

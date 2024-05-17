@@ -1,34 +1,47 @@
 package vn.superandroid.logo.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
-import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator3;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import vn.superandroid.logo.Adapter.CategoryAdapter;
 import vn.superandroid.logo.DepthPageTransformer;
-import vn.superandroid.logo.ImagesViewPager2Adapter;
+import vn.superandroid.logo.Adapter.ImagesViewPager2Adapter;
+import vn.superandroid.logo.Model.CategoryModel;
 import vn.superandroid.logo.Model.Images;
 import vn.superandroid.logo.Model.User;
 import vn.superandroid.logo.R;
+import vn.superandroid.logo.api.CategoryService;
+import vn.superandroid.logo.api.RetrofitClient;
+import vn.superandroid.logo.api.UserService;
 
 public class MainActivity extends AppCompatActivity {
     private User mUser;
     private ViewPager2 viewPager2;
     private CircleIndicator3 circleIndicator3;
     private List<Images> imagesList1;
+    private LinearLayout hoSoBtn;
     private Handler handler = new Handler();
+    CategoryService categoryService;
+    private List<CategoryModel> mListCategory;
+    private RecyclerView recyclerViewCategoryList;
+    private RecyclerView.Adapter adapter;
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
@@ -66,31 +79,19 @@ public class MainActivity extends AppCompatActivity {
         //viewPager2.setPageTransformer(new ZoomOutPageTransformer());
         viewPager2.setPageTransformer(new DepthPageTransformer());
 
-        // Handle button clicks in BottomAppBar
-
-        LinearLayout hoSoLayout = (LinearLayout) findViewById(R.id.imageView6).getParent();
-
-
-
-        hoSoLayout.setOnClickListener(new View.OnClickListener() {
+        //ánh xạ
+        hoSoBtn = findViewById(R.id.hoSoBtn);
+        hoSoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle "Hồ sơ" button click
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(intent);
             }
         });
-
-        // Handle Bundle
-
-
-        //Xử lý Bundle nhận được
-        Bundle bundleReceive = getIntent().getExtras();
-        if (bundleReceive != null) {
-            User user = (User) bundleReceive.get("object_user");
-            if (user != null) {
-                mUser = user;
-            }
-        }
+        getListCategory();
+        //recyclerViewCategory();
     }
+
 
     private List<Images> getListImages() {
         List<Images> list = new ArrayList<>();
@@ -103,5 +104,31 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Images(R.drawable.banner7));
         list.add(new Images(R.drawable.banner8));
         return list;
+    }
+    private void getListCategory() {
+        //Gọi Interface trong CategoryService
+        categoryService = RetrofitClient.getRetrofit().create(CategoryService.class);
+        categoryService.getListCategory().enqueue(new Callback<List<CategoryModel>>() {
+            @Override
+            public void onResponse(Call<List<CategoryModel>> call, Response<List<CategoryModel>> response) {
+                if (response.isSuccessful()) {
+                    mListCategory = response.body(); //nhận mảng Category
+                } else {
+                    int statusCode = response.code();
+                }
+            }
+            @Override
+            public void onFailure(Call<List<CategoryModel>> call, Throwable t) {
+                Log.d("logg", t.getMessage());
+            }
+        });
+    }
+    private void recyclerViewCategory() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerViewCategoryList = findViewById(R.id.rc_Category);
+        recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
+
+        adapter = new CategoryAdapter(mListCategory);
+        recyclerViewCategoryList.setAdapter(adapter);
     }
 }

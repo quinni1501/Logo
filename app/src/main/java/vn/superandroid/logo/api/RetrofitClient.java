@@ -9,7 +9,7 @@ public class RetrofitClient {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
                     //đường dẫn
-                    .baseUrl("http://192.168.97.222:8188/api/")
+                    .baseUrl("http://192.168.1.3:8188/api/")
                     //.baseUrl("https://6644eae1b8925626f8907194.mockapi.io/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();

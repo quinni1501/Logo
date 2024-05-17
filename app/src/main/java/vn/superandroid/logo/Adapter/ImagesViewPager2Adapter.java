@@ -1,4 +1,4 @@
-package vn.superandroid.logo;
+package vn.superandroid.logo.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import vn.superandroid.logo.Model.Images;
+import vn.superandroid.logo.R;
 
 public class ImagesViewPager2Adapter extends RecyclerView.Adapter<ImagesViewPager2Adapter.ImagesViewHolder> {
     private List<Images> imagesList;

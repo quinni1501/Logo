@@ -5,224 +5,263 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".Activities.MainActivity">
 
-    <!-- Toolbar Layout -->
-    <LinearLayout
-        android:id="@+id/toolbar"
+    <!-- AppBar layout for using Toolbar as AppBar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
         android:background="#C51D1D"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <ImageView
-            android:id="@+id/menuIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="12dp"
-            android:src="@drawable/ic_menu" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <ImageView
-            android:id="@+id/notificationIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_notification" />
-
-    </LinearLayout>
-
-    <!-- ViewPager for Banner Images -->
-    <LinearLayout
-        android:id="@+id/banner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewpage2"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="450dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="16dp"/>
-        <!-- Indicator for ViewPager -->
-        <me.relex.circleindicator.CircleIndicator3
-            android:id="@+id/circle_indicator3"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_alignParentRight="true"
-            android:layout_margin="-5dp"
-            app:ci_gravity="center" />
-    </LinearLayout>
+            android:layout_height="match_parent">
 
-    <!-- RecyclerView for Movie List -->
-    <LinearLayout
-        android:id="@+id/indicatorLayout"
+            <!-- ToolBar widget -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Right most TextView -->
+            <ImageView
+                android:id="@+id/notificationIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_notification"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/toolbar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Right most ImageView -->
+            <ImageView
+                android:id="@+id/menuIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/toolbar"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_menu" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/banner"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/indicatorLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="8dp" />
+        <LinearLayout
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
-    <!-- Bottom Navigation -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpage2"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp" />
+            <!-- Indicator for ViewPager -->
+            <me.relex.circleindicator.CircleIndicator3
+                android:id="@+id/circle_indicator3"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="-5dp"
+                app:ci_gravity="center" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:text="Categories"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_Category"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="22dp"
+                android:paddingRight="22dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        </LinearLayout>
+    </ScrollView>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar"
-            android:layout_width="431dp"
-            android:layout_height="60dp"
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:backgroundTint="#2B2929">
+            android:backgroundTint="#2B2929"
+            app:fabCradleMargin="8dp"
+            app:fabCradleRoundedCornerRadius="50dp"
+            app:fabCradleVerticalOffset="6dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="0dp">
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp">
 
                 <LinearLayout
+                    android:id="@+id/phimBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:orientation="vertical">
+                    android:layout_weight="0.2"
+                    android:orientation="vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp">
 
                     <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:id="@+id/imgView_Phim"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:src="@drawable/ic_phim"
                         app:tint="@color/white" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/textView10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
                         android:text="Phim"
                         android:textAlignment="center"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/lichChieuBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:orientation="vertical">
+                    android:layout_weight="0.2"
+                    android:orientation="vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp">
 
                     <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:id="@+id/imgView_LichChieu"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:src="@drawable/ic_lichchieu"
                         app:tint="@color/white" />
 
                     <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="70dp"
+                        android:id="@+id/textView11"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
                         android:text="Lịch chiếu"
                         android:textAlignment="center"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
                 </LinearLayout>
 
+                <ImageView
+                    android:id="@+id/imgView_Logo"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="0dp"
+                    android:src="@drawable/logo"
+                    app:layout_anchor="@+id/bottomAppBar"
+                    app:layout_anchorGravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"/>
+
                 <LinearLayout
+                    android:id="@+id/quaTangBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:orientation="vertical">
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:orientation="vertical">
+                    android:layout_weight="0.2"
+                    android:orientation="vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp">
 
                     <ImageView
-                        android:id="@+id/imageView5"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:id="@+id/imageView6"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:src="@drawable/ic_quatang"
                         app:tint="@color/white" />
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/textView12"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Khuyến mãi"
+                        android:layout_weight="0.2"
+                        android:text="Quà tặng"
                         android:textAlignment="center"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/hoSoBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:orientation="vertical">
+                    android:layout_weight="0.2"
+                    android:orientation="vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp">
 
                     <ImageView
-                        android:id="@+id/imageView6"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:id="@+id/imageView7"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:src="@drawable/ic_hoso"
                         app:tint="@color/white" />
 
                     <TextView
-                        android:id="@+id/textView6"
+                        android:id="@+id/textView13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
                         android:text="Hồ sơ"
                         android:textAlignment="center"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.bottomappbar.BottomAppBar>
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:layout_margin="0dp"
-            android:src="@drawable/logo"
-            app:layout_anchor="@+id/bottomAppBar"
-            app:layout_anchorGravity="center" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

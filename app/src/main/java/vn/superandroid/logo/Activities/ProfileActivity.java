@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -84,6 +85,7 @@ public class ProfileActivity extends AppCompatActivity {
         imgAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 BottomSheetDialog bottomSheet =
                         new BottomSheetDialog();
                 bottomSheet.show(getSupportFragmentManager(),
@@ -97,7 +99,10 @@ public class ProfileActivity extends AppCompatActivity {
         sharedPrefManager = new SharedPrefManager(getApplicationContext());
         user = sharedPrefManager.getData();
         tvFullname.setText(user.getUserFullname());
-        tvGender.setText(user.getUserGender());
+        if(user.getUserGender().trim().equals("1"))
+        {
+            tvGender.setText("Nữ");
+        } else tvGender.setText("Nam");
         tvEmail.setText(user.getUserEmail());
         tvPhone.setText(user.getUserPhone());
     }
