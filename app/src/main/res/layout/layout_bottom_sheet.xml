@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottom_sheet_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:layout_margin="10dp"
+        android:id="@+id/choose_img_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#A11818"
+        android:text="Chọn ảnh từ thư viện"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:layout_margin="10dp"
+        android:id="@+id/upload_img_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#A11818"
+        android:text="Xác nhận cập nhật ảnh"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
