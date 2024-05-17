@@ -96,6 +96,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Đăng Ký"
+            android:textColor="@color/white"
             android:backgroundTint="#DC0B0B" />
     </LinearLayout>
 

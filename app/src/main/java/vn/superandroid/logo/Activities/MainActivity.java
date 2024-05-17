@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
@@ -65,16 +66,21 @@ public class MainActivity extends AppCompatActivity {
         //viewPager2.setPageTransformer(new ZoomOutPageTransformer());
         viewPager2.setPageTransformer(new DepthPageTransformer());
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
+        // Handle button clicks in BottomAppBar
 
-                }
-                return false;
+        LinearLayout hoSoLayout = (LinearLayout) findViewById(R.id.imageView6).getParent();
+
+
+
+        hoSoLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle "Hồ sơ" button click
             }
         });
+
+        // Handle Bundle
+
 
         //Xử lý Bundle nhận được
         Bundle bundleReceive = getIntent().getExtras();
