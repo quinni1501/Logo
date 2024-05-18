@@ -8,6 +8,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,36 +26,42 @@ public class FilmActivity extends AppCompatActivity {
     private CircleIndicator3 indicator1, indicator2, indicator3;
     private Handler handler = new Handler();
     private Runnable runnable;
+    private static final String TAG = "FilmActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_film);
 
-        // Initialize ViewPagers and Indicators
-        viewPager1 = findViewById(R.id.viewPager1);
-        indicator1 = findViewById(R.id.indicator1);
-        viewPager2 = findViewById(R.id.viewPager2);
-        indicator2 = findViewById(R.id.indicator2);
-        viewPager3 = findViewById(R.id.viewPager3);
-        indicator3 = findViewById(R.id.indicator3);
+        try {
+            // Initialize ViewPagers and Indicators
+            viewPager1 = findViewById(R.id.viewPager1);
+            indicator1 = findViewById(R.id.indicator1);
+            viewPager2 = findViewById(R.id.viewPager2);
+            indicator2 = findViewById(R.id.indicator2);
+            viewPager3 = findViewById(R.id.viewPager3);
+            indicator3 = findViewById(R.id.indicator3);
 
-        // Setup ViewPagers with Indicators
-        setupViewPager(viewPager1, indicator1, getPostersForPhimHayNhat());
-        setupViewPager(viewPager2, indicator2, getPostersForTheLoai());
-        setupViewPager(viewPager3, indicator3, getPostersForSapRaMat());
+            // Setup ViewPagers with Indicators
+            setupViewPager(viewPager1, indicator1, getPostersForPhimHayNhat());
+            setupViewPager(viewPager2, indicator2, getPostersForTheLoai());
+            setupViewPager(viewPager3, indicator3, getPostersForSapRaMat());
 
-        // Create and start auto-scroll runnable for each ViewPager
-        runnable = new Runnable() {
-            @Override
-            public void run() {
-                autoScrollViewPager(viewPager1);
-                autoScrollViewPager(viewPager2);
-                autoScrollViewPager(viewPager3);
-                handler.postDelayed(this, 3000);
-            }
-        };
-        handler.postDelayed(runnable, 3000);
+            // Create and start auto-scroll runnable for each ViewPager
+            runnable = new Runnable() {
+                @Override
+                public void run() {
+                    autoScrollViewPager(viewPager1);
+                    autoScrollViewPager(viewPager2);
+                    autoScrollViewPager(viewPager3);
+                    handler.postDelayed(this, 3000);
+                }
+            };
+            handler.postDelayed(runnable, 3000);
+
+        } catch (Exception e) {
+            Log.e(TAG, "Error in onCreate: ", e);
+        }
     }
 
     private void setupViewPager(ViewPager2 viewPager, CircleIndicator3 indicator, List<Poster> posters) {
@@ -65,10 +72,12 @@ public class FilmActivity extends AppCompatActivity {
     }
 
     private void autoScrollViewPager(ViewPager2 viewPager) {
-        if (viewPager.getCurrentItem() < viewPager.getAdapter().getItemCount() - 1) {
-            viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
-        } else {
-            viewPager.setCurrentItem(0);
+        if (viewPager.getAdapter() != null) {
+            if (viewPager.getCurrentItem() < viewPager.getAdapter().getItemCount() - 1) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+            } else {
+                viewPager.setCurrentItem(0);
+            }
         }
     }
 

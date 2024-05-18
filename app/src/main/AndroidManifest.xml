@@ -27,6 +27,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.InformationOfFilmActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.FilmActivity"
             android:exported="false" />
         <activity
@@ -51,14 +54,12 @@
             android:name=".Activities.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.Design.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
