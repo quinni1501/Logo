@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
+    private View imgView_Phim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +86,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+        imgView_Phim = findViewById(R.id.imgView_Phim);
+        imgView_Phim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FilmActivity.class);
                 startActivity(intent);
             }
         });
