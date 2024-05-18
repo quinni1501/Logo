@@ -43,17 +43,31 @@
                 android:textStyle="bold"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="12dp" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView1"
+            <LinearLayout
+                android:id="@+id/banner1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:scrollbars="vertical" />
+                android:layout_marginBottom="16dp">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager1"
+                    android:layout_width="match_parent"
+                    android:layout_height="450dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginTop="16dp" />
+
+                <me.relex.circleindicator.CircleIndicator3
+                    android:id="@+id/indicator1"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="-5dp"
+                    app:ci_gravity="center" />
+            </LinearLayout>
 
             <!-- Section 2: Thể Loại -->
             <TextView
@@ -68,15 +82,29 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView2"
+            <LinearLayout
+                android:id="@+id/banner2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:scrollbars="vertical" />
+                android:layout_marginBottom="16dp">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager2"
+                    android:layout_width="match_parent"
+                    android:layout_height="450dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginTop="16dp" />
+
+                <me.relex.circleindicator.CircleIndicator3
+                    android:id="@+id/indicator2"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="-5dp"
+                    app:ci_gravity="center" />
+            </LinearLayout>
 
             <!-- Section 3: Sắp Ra Mắt -->
             <TextView
@@ -91,15 +119,29 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView3"
+            <LinearLayout
+                android:id="@+id/banner3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:scrollbars="vertical" />
+                android:layout_marginBottom="16dp">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager3"
+                    android:layout_width="match_parent"
+                    android:layout_height="450dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginTop="16dp" />
+
+                <me.relex.circleindicator.CircleIndicator3
+                    android:id="@+id/indicator3"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="-5dp"
+                    app:ci_gravity="center" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
