@@ -108,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
                         SharedPrefManager sharedPrefManager = new SharedPrefManager(LoginActivity.this);
                         sharedPrefManager.setData(mUser);
                         //Chuyển vào MainActivity
-                        Intent intent = new Intent(LoginActivity.this, FilmActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         finish();
                         startActivity(intent);
                     } else {

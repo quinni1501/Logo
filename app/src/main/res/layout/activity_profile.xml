@@ -33,9 +33,9 @@
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +44,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -51,37 +52,37 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="Họ và tên: "
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp" /> <!-- Thêm khoảng cách -->
+                android:textStyle="bold" /> <!-- Thêm khoảng cách -->
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="Giới tính:"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp" /> <!-- Thêm khoảng cách -->
+                android:textStyle="bold" /> <!-- Thêm khoảng cách -->
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="Email:"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp" /> <!-- Thêm khoảng cách -->
+                android:textStyle="bold" /> <!-- Thêm khoảng cách -->
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="Số ĐT: "
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp" /> <!-- Thêm khoảng cách -->
+                android:textStyle="bold" /> <!-- Thêm khoảng cách -->
 
         </LinearLayout>
 
@@ -95,33 +96,33 @@
                 android:id="@+id/tvFullname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="little dinosaur"
-                android:textSize="20sp"
-                android:layout_marginTop="8dp"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tvGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="Nam"
-                android:textSize="20sp"
-                android:layout_marginTop="8dp"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tvEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="animal@gmail.com"
-                android:textSize="20sp"
-                android:layout_marginTop="8dp"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tvPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="0964607603"
-                android:textSize="20sp"
-                android:layout_marginTop="8dp"/>
+                android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -138,7 +139,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.912" />
-    <ImageButton
+    <ImageView
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,23 +22,22 @@ import retrofit2.Response;
 import vn.superandroid.logo.Adapter.CategoryAdapter;
 import vn.superandroid.logo.DepthPageTransformer;
 import vn.superandroid.logo.Adapter.ImagesViewPager2Adapter;
-import vn.superandroid.logo.Model.CategoryModel;
+import vn.superandroid.logo.Model.Category;
 import vn.superandroid.logo.Model.Images;
 import vn.superandroid.logo.Model.User;
 import vn.superandroid.logo.R;
 import vn.superandroid.logo.api.CategoryService;
 import vn.superandroid.logo.api.RetrofitClient;
-import vn.superandroid.logo.api.UserService;
 
 public class MainActivity extends AppCompatActivity {
     private User mUser;
     private ViewPager2 viewPager2;
     private CircleIndicator3 circleIndicator3;
     private List<Images> imagesList1;
-    private LinearLayout hoSoBtn;
+    private LinearLayout hoSoBtn, phimBtn;
     private Handler handler = new Handler();
     CategoryService categoryService;
-    private List<CategoryModel> mListCategory;
+    private List<Category> mListCategory;
     private RecyclerView recyclerViewCategoryList;
     private RecyclerView.Adapter adapter;
     private Runnable runnable = new Runnable() {
@@ -59,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mListCategory = new ArrayList<>();
         // anh xa viewpager2
         viewPager2 = findViewById(R.id.viewpage2);
         circleIndicator3 = findViewById(R.id.circle_indicator3);
@@ -97,8 +96,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        phimBtn = findViewById(R.id.phimBtn);
+        phimBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FilmActivity.class);
+                startActivity(intent);
+            }
+        });
         getListCategory();
-        //recyclerViewCategory();
+        recyclerViewCategory();
     }
 
 
@@ -117,17 +125,17 @@ public class MainActivity extends AppCompatActivity {
     private void getListCategory() {
         //Gọi Interface trong CategoryService
         categoryService = RetrofitClient.getRetrofit().create(CategoryService.class);
-        categoryService.getListCategory().enqueue(new Callback<List<CategoryModel>>() {
+        categoryService.getListCategory().enqueue(new Callback<List<Category>>() {
             @Override
-            public void onResponse(Call<List<CategoryModel>> call, Response<List<CategoryModel>> response) {
+            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
                 if (response.isSuccessful()) {
-                    mListCategory = response.body(); //nhận mảng Category
+                    mListCategory = response.body(); //nhận mảng Users
                 } else {
                     int statusCode = response.code();
                 }
             }
             @Override
-            public void onFailure(Call<List<CategoryModel>> call, Throwable t) {
+            public void onFailure(Call<List<Category>> call, Throwable t) {
                 Log.d("logg", t.getMessage());
             }
         });
@@ -137,6 +145,15 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewCategoryList = findViewById(R.id.rc_Category);
         recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
 
+        /*ArrayList<CategoryModel> categoryList = new ArrayList<>();
+        categoryList.add(new CategoryModel("1", "Mystery"));
+        categoryList.add(new CategoryModel("2", "Thriller"));
+        categoryList.add(new CategoryModel("3", "Fantasy"));
+        categoryList.add(new CategoryModel("4", "Adventure"));
+        categoryList.add(new CategoryModel("5", "Comedy"));
+        categoryList.add(new CategoryModel("6", "Romance"));
+        categoryList.add(new CategoryModel("7", "Horror"));
+        categoryList.add(new CategoryModel("8", "Animation"));*/
         adapter = new CategoryAdapter(mListCategory);
         recyclerViewCategoryList.setAdapter(adapter);
     }

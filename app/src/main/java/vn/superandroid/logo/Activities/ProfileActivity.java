@@ -2,18 +2,25 @@ package vn.superandroid.logo.Activities;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -34,7 +41,7 @@ public class ProfileActivity extends AppCompatActivity {
     private static final int MY_REQUEST_CODE = 10;
     Button btnLogout;
     TextView tvFullname, tvGender, tvEmail, tvPhone;
-    ImageView imgAvatar;
+    ImageView imgAvatar, btnBack;
     User user;
     SharedPrefManager sharedPrefManager;
     private final ActivityResultLauncher<Intent> mActivityResultLauncher = registerForActivityResult(
@@ -69,8 +76,18 @@ public class ProfileActivity extends AppCompatActivity {
         showUserInfo();
         initListener();
     }
+    private void initUI() {
+        tvFullname = findViewById(R.id.tvFullname);
+        tvGender = findViewById(R.id.tvGender);
+        tvEmail = findViewById(R.id.tvEmail);
+        tvPhone =findViewById(R.id.tvPhone);
+        btnLogout = findViewById(R.id.logoutBtn);
+        imgAvatar = findViewById(R.id.imageView);
+        btnBack = findViewById(R.id.backButton);
+    }
 
     private void initListener() {
+        Boolean checkChooseImg;
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,14 +102,19 @@ public class ProfileActivity extends AppCompatActivity {
         imgAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                BottomSheetDialog bottomSheet =
-                        new BottomSheetDialog();
-                bottomSheet.show(getSupportFragmentManager(),
-                        "ModalBottomSheet");
-                //onClickRequestPermission();
+                showDialog();
+                    //onClickRequestPermission();
             }
         });
+
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
 
     private void showUserInfo() {
@@ -106,14 +128,27 @@ public class ProfileActivity extends AppCompatActivity {
         tvEmail.setText(user.getUserEmail());
         tvPhone.setText(user.getUserPhone());
     }
+    private void showDialog(){
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.layout_bottom_sheet);
 
-    private void initUI() {
-        tvFullname = findViewById(R.id.tvFullname);
-        tvGender = findViewById(R.id.tvGender);
-        tvEmail = findViewById(R.id.tvEmail);
-        tvPhone =findViewById(R.id.tvPhone);
-        btnLogout = findViewById(R.id.logoutBtn);
-        imgAvatar = findViewById(R.id.imageView);
+        Button chooseImgBtn = dialog.findViewById(R.id.choose_img_button);
+        Button uploadImgBtn = dialog.findViewById(R.id.upload_img_button);
+
+        chooseImgBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                onClickRequestPermission();
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
     public void onClickRequestPermission() {
         if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
