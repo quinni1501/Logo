@@ -34,10 +34,8 @@ public class FilmActivity extends AppCompatActivity {
         // Initialize ViewPagers and Indicators
         viewPager1 = findViewById(R.id.viewPager1);
         indicator1 = findViewById(R.id.indicator1);
-
         viewPager2 = findViewById(R.id.viewPager2);
         indicator2 = findViewById(R.id.indicator2);
-
         viewPager3 = findViewById(R.id.viewPager3);
         indicator3 = findViewById(R.id.indicator3);
 
