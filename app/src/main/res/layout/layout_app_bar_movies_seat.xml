@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="?attr/actionBarSize">
+
+    <ImageView
+        android:id="@+id/btnBackMoviesSeat"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="22dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/back_arrow1" />
+
+</FrameLayout>

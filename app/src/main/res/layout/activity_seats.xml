@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentMoviesSeat"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:hardwareAccelerated="true"
+    android:layerType="hardware"
+    android:background="@color/black"
+    tools:context=".Activities.SeatsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/appBarMoviesSeat"
+            layout="@layout/layout_app_bar_movies_seat" />
+
+        <FrameLayout
+            android:id="@+id/flCinemaScreenMoviesSeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appBarMoviesSeat"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="-25dp"
+            android:layout_marginEnd="22dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="176dp"
+                app:srcCompat="@drawable/ellipse_screen" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="100dp"
+                android:layout_height="57dp"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="25dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/text_screen" />
+
+        </FrameLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/svSeatsMoviesSeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:hardwareAccelerated="true"
+            android:layerType="hardware"
+            android:layout_below="@+id/flCinemaScreenMoviesSeat">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@+id/flCinemaScreenMoviesSeat"
+                android:hardwareAccelerated="true"
+                android:layerType="hardware"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvSeatTypeTitleMoviesSeat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Normal (4500ks)"
+                    android:textStyle="bold"
+                    android:textColor="#4C4949"
+                    android:textSize="16sp" />
+
+                <com.otaliastudios.zoom.ZoomLayout
+                    android:id="@+id/zoomLayoutSeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="370dp"
+                    android:focusableInTouchMode="true"
+                    android:focusable="true"
+                    android:layout_below="@+id/tvSeatTypeTitleMoviesSeat"
+                    android:scrollbars="vertical|horizontal"
+                    app:flingEnabled="true"
+                    app:hasClickableChildren="true"
+                    android:clickable="true"
+                    app:horizontalPanEnabled="true"
+                    app:verticalPanEnabled="true"
+                    app:maxZoom="2.5"
+                    app:maxZoomType="zoom"
+                    app:minZoom="1.0"
+                    app:minZoomType="zoom"
+                    app:oneFingerScrollEnabled="true"
+                    app:overPinchable="true"
+                    app:overScrollHorizontal="false"
+                    app:overScrollVertical="false"
+                    app:scrollEnabled="true"
+                    app:transformation="centerInside"
+                    app:transformationGravity="center_vertical|center_horizontal"
+                    app:zoomEnabled="true">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSeatsMoviesSeat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:focusable="true"
+                        android:nestedScrollingEnabled="false"
+                        tools:listitem="@layout/view_holder_movies_seat_list" />
+
+                </com.otaliastudios.zoom.ZoomLayout>
+
+            </RelativeLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/llSeatAvailableMoviesSeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/svSeatsMoviesSeat"
+            android:background="@color/black"
+            android:orientation="horizontal"
+            android:paddingStart="24dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/white_dot" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:text="Available"
+                    android:textColor="#4C4949"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="45dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/grey_dot" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:text="Taken"
+                    android:textColor="#4C4949"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/accent_dot" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:text="Your Selection"
+                    android:textColor="#4C4949"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSeekBarMoviesSeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llSeatAvailableMoviesSeat"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center_vertical"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/minus" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekbarSeat"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:max="100"
+                android:progress="0"
+                android:progressBackgroundTint="#4C4949"
+                android:progressTint="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/ic_baseline_add_grey" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llSeekBarMoviesSeat"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="45dp">
+
+            <LinearLayout
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNumberOfTicketsMoviesSeat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    tools:text="2 Tickets" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTicketPriceMoviesSeat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#36EF3E"
+                    android:textSize="20sp"
+                    tools:text="17000KS" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBuyButtonMoviesSeat"
+                android:layout_width="225dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@drawable/buy_button" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

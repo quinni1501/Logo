@@ -55,4 +55,6 @@ dependencies {
     implementation ("com.squareup.okhttp3:logging-interceptor:3.12.0")
     //Bottom Sheet
     implementation ("com.google.android.material:material:1.12.0")
+    //Zoom Layout
+    implementation ("com.otaliastudios:zoomlayout:1.9.0")
 }
