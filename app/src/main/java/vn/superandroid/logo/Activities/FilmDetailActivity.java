@@ -1,5 +1,6 @@
 package vn.superandroid.logo.Activities;
 
+import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,6 +27,8 @@ public class FilmDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_film_detail);
+
+        FirebaseApp.initializeApp(this);
 
         // Initialize views
         videoContainer = findViewById(R.id.videoContainer);
@@ -57,7 +61,7 @@ public class FilmDetailActivity extends AppCompatActivity {
                     String time = snapshot.child("time").getValue(String.class);
                     String country = snapshot.child("country").getValue(String.class);
                     String rating = snapshot.child("rating").getValue(String.class);
-
+                    Log.d("Year", year);
                     // Update the views
                     tvFilmName.setText(title);
                     tvGenre.setText(genres);
