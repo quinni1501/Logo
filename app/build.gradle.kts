@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
+    // Add the Google services Gradle plugin
     id("com.google.gms.google-services")
+
 }
 
 android {
@@ -33,24 +35,15 @@ android {
 }
 
 dependencies {
-    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
-
-    // When using the BoM, you don't specify versions in Firebase library dependencies
-
-    // Add the dependency for the Firebase SDK for Google Analytics
-    implementation("com.google.firebase:firebase-analytics")
-    implementation ("com.google.firebase:firebase-database:20.0.5")
-    implementation ("com.google.firebase:firebase-core:21.1.1")
     implementation ("com.google.android.material:material:1.6.1")
     implementation ("androidx.viewpager2:viewpager2:1.0.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation ("androidx.viewpager:viewpager:1.0.0")
-    implementation (platform ("com.google.firebase:firebase-bom:31.1.0"))
-    implementation ("com.google.firebase:firebase-database")
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("com.google.firebase:firebase-database:21.0.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -66,6 +59,15 @@ dependencies {
     implementation ("com.squareup.okhttp3:logging-interceptor:3.12.0")
     //Bottom Sheet
     implementation ("com.google.android.material:material:1.12.0")
-    //Zoom Layout
-    implementation ("com.otaliastudios:zoomlayout:1.9.0")
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
+
+
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
+
+
+    // Add the dependencies for any other desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
 }
