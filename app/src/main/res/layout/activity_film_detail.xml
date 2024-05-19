@@ -8,8 +8,8 @@
     tools:context="Activities.FilmDetailActivity">
 
     <include
-        android:id="@+id/custom_toolbar5"
-        layout="@layout/custom_toolbar5" />
+        android:id="@+id/custom_toolbar4"
+        layout="@layout/custom_toolbar4" />
 
     <ScrollView
         android:layout_width="match_parent"
