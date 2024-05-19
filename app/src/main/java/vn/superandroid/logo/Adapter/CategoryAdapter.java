@@ -3,24 +3,22 @@ package vn.superandroid.logo.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import vn.superandroid.logo.Model.CategoryModel;
+import vn.superandroid.logo.Model.Category;
 import vn.superandroid.logo.R;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
-    List<CategoryModel> categoryModels;
+    List<Category> categories;
 
-    public CategoryAdapter(List<CategoryModel> categoryModels) {
-        this.categoryModels = categoryModels;
+    public CategoryAdapter(List<Category> categories) {
+        this.categories = categories;
     }
 
     @NonNull
@@ -33,12 +31,12 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.ViewHolder holder, int position) {
         //Get list Category
-        holder.categoryName.setText(categoryModels.get(position).getName());
+        holder.categoryName.setText(categories.get(position).getName());
     }
 
     @Override
     public int getItemCount() {
-        return categoryModels.size();
+        return categories.size();
     }
     public class ViewHolder extends  RecyclerView.ViewHolder{
         TextView categoryName;
