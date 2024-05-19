@@ -27,10 +27,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Activities.SplashActivity"
+            android:name=".Activities.SeatsActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.FilmActivity"
+            android:name=".Activities.FilmDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.SplashActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.PayingActivity"
@@ -51,7 +54,7 @@
             android:name=".Activities.ShowtimesActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.FilmDetailActivity"
+            android:name=".Activities.FilmActivity"
             android:exported="true"
             android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>

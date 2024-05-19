@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/edittext_background"
     tools:context="Activities.FilmDetailActivity">
 
     <include
@@ -20,7 +21,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <FrameLayout
+            <VideoView
                 android:id="@+id/videoContainer"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
@@ -28,7 +29,7 @@
                 android:background="@android:color/darker_gray">
                 <!-- Video view placeholder -->
 
-            </FrameLayout>
+            </VideoView>
 
             <TextView
                 android:id="@+id/tvTitle"
@@ -38,6 +39,7 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="8dp"
+                android:textColor="@color/white"
                 android:text="Tên Phim"/>
 
             <TextView
@@ -46,6 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
+                android:textColor="@color/white"
                 android:text="Thể Loại"/>
 
             <TextView
@@ -54,6 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
+                android:textColor="@color/white"
                 android:text="Năm Sản Xuất"/>
 
             <TextView
@@ -62,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
+                android:textColor="@color/white"
                 android:text="Thời Lượng"/>
 
             <TextView
@@ -70,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
+                android:textColor="@color/white"
                 android:text="Nước Sản Xuất"/>
 
             <TextView
@@ -78,6 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
+                android:textColor="@color/white"
                 android:text="Điểm IMDb"/>
 
         </LinearLayout>

@@ -1,106 +1,58 @@
 package vn.superandroid.logo.Activities;
 
-import androidx.annotation.Nullable;
+import static vn.superandroid.logo.R.id.toolbar;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import androidx.appcompat.widget.Toolbar;
+//import android.widget.Toolbar;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import me.relex.circleindicator.CircleIndicator3;
-import vn.superandroid.logo.Adapter.PosterAdapter;
-import vn.superandroid.logo.DepthPageTransformer;
-import vn.superandroid.logo.Model.Poster;
 import vn.superandroid.logo.R;
 
 public class FilmActivity extends AppCompatActivity {
 
-    private ViewPager2 viewPager1, viewPager2, viewPager3;
-    private CircleIndicator3 indicator1, indicator2, indicator3;
-    private Handler handler = new Handler();
-    private Runnable runnable;
-    private static final String TAG = "FilmActivity";
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_film);
 
-        try {
-            // Initialize ViewPagers and Indicators
-            viewPager1 = findViewById(R.id.viewPager1);
-            indicator1 = findViewById(R.id.indicator1);
-            viewPager2 = findViewById(R.id.viewPager2);
-            indicator2 = findViewById(R.id.indicator2);
-            viewPager3 = findViewById(R.id.viewPager3);
-            indicator3 = findViewById(R.id.indicator3);
+        // Set up the custom toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-            // Setup ViewPagers with Indicators
-            setupViewPager(viewPager1, indicator1, getPostersForPhimHayNhat());
-            setupViewPager(viewPager2, indicator2, getPostersForTheLoai());
-            setupViewPager(viewPager3, indicator3, getPostersForSapRaMat());
-
-            // Create and start auto-scroll runnable for each ViewPager
-            runnable = new Runnable() {
-                @Override
-                public void run() {
-                    autoScrollViewPager(viewPager1);
-                    autoScrollViewPager(viewPager2);
-                    autoScrollViewPager(viewPager3);
-                    handler.postDelayed(this, 3000);
-                }
-            };
-            handler.postDelayed(runnable, 3000);
-
-        } catch (Exception e) {
-            Log.e(TAG, "Error in onCreate: ", e);
-        }
-    }
-
-    private void setupViewPager(ViewPager2 viewPager, CircleIndicator3 indicator, List<Poster> posters) {
-        PosterAdapter posterAdapter = new PosterAdapter(posters);
-        viewPager.setAdapter(posterAdapter);
-        indicator.setViewPager(viewPager);
-        viewPager.setPageTransformer(new DepthPageTransformer());
-    }
-
-    private void autoScrollViewPager(ViewPager2 viewPager) {
-        if (viewPager.getAdapter() != null) {
-            if (viewPager.getCurrentItem() < viewPager.getAdapter().getItemCount() - 1) {
-                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
-            } else {
-                viewPager.setCurrentItem(0);
+        ImageButton backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate back to MainActivity
+                Intent intent = new Intent(FilmActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish(); // Finish FilmActivity to remove it from the back stack
             }
+        });
+
+        ImageView[] posters = {
+                findViewById(R.id.poster1), findViewById(R.id.poster2), findViewById(R.id.poster3),
+                findViewById(R.id.poster4), findViewById(R.id.poster5), findViewById(R.id.poster6),
+                findViewById(R.id.poster7), findViewById(R.id.poster8), findViewById(R.id.poster9)
+        };
+
+        for (ImageView poster : posters) {
+            poster.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(FilmActivity.this, FilmDetailActivity.class);
+                    startActivity(intent);
+                }
+            });
         }
     }
 
-    private List<Poster> getPostersForPhimHayNhat() {
-        List<Poster> posters = new ArrayList<>();
-        posters.add(new Poster(R.drawable.banner1, "Exhuma: Quật Mộ Trùng Ma"));
-        posters.add(new Poster(R.drawable.banner2, "Godzilla And Kong: The New Empire"));
-        posters.add(new Poster(R.drawable.banner3, "The First Omen: Điềm Báo Của Quỷ"));
-        return posters;
-    }
 
-    private List<Poster> getPostersForTheLoai() {
-        List<Poster> posters = new ArrayList<>();
-        posters.add(new Poster(R.drawable.banner4, "MAI"));
-        posters.add(new Poster(R.drawable.banner5, "Minions: The Rise Of Gru"));
-        posters.add(new Poster(R.drawable.banner6, "One Piece Film: Red"));
-        return posters;
-    }
-
-    private List<Poster> getPostersForSapRaMat() {
-        List<Poster> posters = new ArrayList<>();
-        posters.add(new Poster(R.drawable.banner7, "Mission: Impossible 7"));
-        posters.add(new Poster(R.drawable.banner8, "Lật Mặt 7: Môt Điều Ước"));
-        return posters;
-    }
 }

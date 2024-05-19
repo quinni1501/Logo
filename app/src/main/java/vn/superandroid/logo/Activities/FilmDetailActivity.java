@@ -1,5 +1,6 @@
 package vn.superandroid.logo.Activities;
 
+import android.net.Uri;
 import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
@@ -20,7 +23,7 @@ import vn.superandroid.logo.R;
 
 public class FilmDetailActivity extends AppCompatActivity {
 
-    private FrameLayout videoContainer;
+    private VideoView videoContainer;
     private TextView tvFilmName, tvGenre, tvYear, tvDuration, tvCountry, tvRating;
 
     @Override
@@ -70,8 +73,17 @@ public class FilmDetailActivity extends AppCompatActivity {
                     tvCountry.setText(country);
                     tvRating.setText(rating);
 
-                    // For video, you would need to handle it based on your video playback setup
-                    // For example, if using ExoPlayer, you would set up the player here
+                    String videoUrl = "https://firebasestorage.googleapis.com/v0/b/film-f8b47.appspot.com/o/y2mate.com%20-%20EXHUMA%20QU%E1%BA%ACT%20M%E1%BB%98%20TR%C3%99NG%20MA%20%20KC%2015032024_1080p.mp4?alt=media&token=f975106d-4677-4918-aa72-37b167dd311c";
+                    Uri videoUri = Uri.parse(videoUrl);
+
+                    // Setup MediaController
+                    MediaController mediaController = new MediaController(FilmDetailActivity.this);
+                    mediaController.setAnchorView(videoContainer);
+                    videoContainer.setMediaController(mediaController);
+
+                    // Set video URI and start playing
+                    videoContainer.setVideoURI(videoUri);
+                    videoContainer.setOnPreparedListener(mp -> videoContainer.start());
                 }
             }
 

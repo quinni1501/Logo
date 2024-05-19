@@ -1,10 +1,11 @@
-<!-- res/layout/custom_toolbar.xml -->
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#A11818"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    android:id="@+id/toolbar">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,20 +19,16 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/back_arrow1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:src="@drawable/back_arrow1" />
 
         <TextView
             android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Chi Tiết Phim"
+            android:text="Có Gì Ở TPQ Cinema ?"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
-
     </RelativeLayout>
-
 </androidx.appcompat.widget.Toolbar>
