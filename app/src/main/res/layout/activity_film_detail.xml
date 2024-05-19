@@ -25,11 +25,37 @@
                 android:id="@+id/videoContainer"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="25dp"
                 android:background="@android:color/darker_gray">
                 <!-- Video view placeholder -->
 
             </VideoView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/videoContainer">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/playBtn"
+                    android:textColor="@color/white"
+                    android:backgroundTint="#A11818"
+                    android:drawableLeft="@drawable/ic_play"
+                    android:text="Play"/>
+
+                <Button
+                    android:id="@+id/stopBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@+id/playBtn"
+                    android:textColor="@color/white"
+                    android:drawableLeft="@drawable/ic_pause"
+                    android:backgroundTint="#A11818"
+                    android:text="Pause" />
+            </RelativeLayout>
+
 
             <TextView
                 android:id="@+id/tvTitle"
