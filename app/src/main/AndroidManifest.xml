@@ -27,6 +27,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.FilmActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.SeatsActivity"
             android:exported="false" />
         <activity
@@ -54,7 +57,7 @@
             android:name=".Activities.ShowtimesActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.FilmActivity"
+            android:name=".Activities.GiftActivity"
             android:exported="true"
             android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>

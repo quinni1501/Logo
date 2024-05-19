@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager2 viewPager2;
     private CircleIndicator3 circleIndicator3;
     private List<Images> imagesList1;
-    private LinearLayout hoSoBtn, phimBtn, lichchieuBtn;
+    private LinearLayout hoSoBtn, phimBtn, quaTangBtn, lichchieuBtn;
     private Handler handler = new Handler();
     CategoryService categoryService;
     private List<Category> mListCategory;
@@ -105,9 +105,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        getListCategory();
-        recyclerViewCategory();
 
+        quaTangBtn = findViewById(R.id.quaTangBtn);
+        quaTangBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GiftActivity.class);
+                startActivity(intent);
+            }
+        });
         lichchieuBtn = findViewById(R.id.lichChieuBtn);
         lichchieuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        getListCategory();
+        recyclerViewCategory();
     }
 
 
