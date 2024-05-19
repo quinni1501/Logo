@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/seatList"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/black">
+    android:orientation="vertical"
+    android:background="@color/black"
+    android:gravity="center_horizontal"> <!-- Đảm bảo các thành phần được căn giữa theo chiều ngang -->
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivSeatCinemaSeat"
@@ -18,9 +20,8 @@
         android:id="@+id/tvSeatTypeCinemaSeat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:textColor="@color/white"
         android:textSize="16sp"
         tools:text="A" />
 
-</FrameLayout>
+</LinearLayout>
