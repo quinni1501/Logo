@@ -7,21 +7,28 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import vn.superandroid.logo.R;
 
 public class ShowtimesActivity extends AppCompatActivity {
 
     Button gioBtn;
-    ImageButton backButton;
+    ImageButton backBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showtimes);
 
+        // Set up the custom toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+
         //ánh xạ
         gioBtn = findViewById(R.id.btn920);
-        backButton = findViewById(R.id.backButton);
+        backBtn = findViewById(R.id.backButton);
         gioBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,7 +36,7 @@ public class ShowtimesActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-       backButton.setOnClickListener(new View.OnClickListener() {
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
