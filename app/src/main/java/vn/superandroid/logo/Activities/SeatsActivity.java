@@ -1,7 +1,9 @@
 package vn.superandroid.logo.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,7 @@ public class SeatsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private MoviesSeatAdapter adapter;
     private List<String> seatList;
+    Button buyBtn;
     ImageButton backBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class SeatsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         //ánh xạ
+        buyBtn = findViewById(R.id.btnBuyButtonMoviesSeat);
         backBtn = findViewById(R.id.backButton);
         recyclerView = findViewById(R.id.rvSeatsMoviesSeat);
         // Grid Layout là để hiển thị theo dạng cột, 1 hàng sẽ có 8 cột
@@ -60,6 +64,16 @@ public class SeatsActivity extends AppCompatActivity {
         adapter = new MoviesSeatAdapter(seatList);
         recyclerView.setAdapter(adapter);
 
+        //nút Buy Ticket
+        buyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SeatsActivity.this, ComboSnacksActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //nút Back
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

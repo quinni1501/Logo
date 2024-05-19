@@ -57,6 +57,9 @@
             android:name=".Activities.ShowtimesActivity"
             android:exported="false" />
         <activity
+            android:name=".Activities.ComboSnacksActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.GiftActivity"
             android:exported="true"
             android:theme="@style/Theme.Design.NoActionBar">
