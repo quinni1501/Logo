@@ -8,8 +8,8 @@
     tools:context="Activities.FilmDetailActivity">
 
     <include
-        android:id="@+id/custom_toolbar2"
-        layout="@layout/custom_toolbar2" />
+        android:id="@+id/custom_toolbar5"
+        layout="@layout/custom_toolbar5" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,10 +24,9 @@
             <VideoView
                 android:id="@+id/videoContainer"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="250dp"
                 android:layout_marginBottom="20dp"
-                android:layout_marginTop="25dp"
-                android:background="@android:color/darker_gray">
+                android:layout_marginTop="25dp">
                 <!-- Video view placeholder -->
 
             </VideoView>
@@ -55,63 +54,156 @@
                     android:backgroundTint="#A11818"
                     android:text="Pause" />
             </RelativeLayout>
-
-
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:text="Tên Phim"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/white"
-                android:text="Tên Phim"/>
-
-            <TextView
-                android:id="@+id/tvGenres"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"/>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/white"
-                android:text="Thể Loại"/>
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tvYear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/white"
-                android:text="Năm Sản Xuất"/>
+                <!-- Cột bên trái -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_gravity="top"
+                    android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/white"
-                android:text="Thời Lượng"/>
+                    <!-- Các TextView mới -->
 
-            <TextView
-                android:id="@+id/tvCountry"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/white"
-                android:text="Nước Sản Xuất"/>
+                    <TextView
+                        android:id="@+id/tvNew2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Thể Loại"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"/>
+                    <TextView
+                        android:id="@+id/tvNew3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Năm Sản Xuất"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+                    <TextView
+                        android:id="@+id/tvNew4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Thời Lượng"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+                    <TextView
+                        android:id="@+id/tvNew5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nước Sản Xuất"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+                    <TextView
+                        android:id="@+id/tvNew6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Điểm IMDb"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
 
-            <TextView
-                android:id="@+id/tvRating"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/white"
-                android:text="Điểm IMDb"/>
+                    <!-- Thêm các TextView mới khác nếu cần -->
+
+                </LinearLayout>
+
+                <!-- Cột bên phải -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_gravity="top"
+                    android:orientation="vertical">
+
+                    <!-- Các TextView đã có sẵn -->
+
+                    <TextView
+                        android:id="@+id/tvGenres"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Thể Loại"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Năm Sản Xuất"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Thời Lượng"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvCountry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nước Sản Xuất"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvRating"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Điểm IMDb"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <!-- Thêm các TextView đã có sẵn khác nếu cần -->
+
+                </LinearLayout>
+            </LinearLayout>
+
 
         </LinearLayout>
     </ScrollView>

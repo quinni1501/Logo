@@ -1,5 +1,6 @@
 package vn.superandroid.logo.Activities;
 
+import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.util.Log;
 import androidx.annotation.NonNull;
@@ -33,7 +34,6 @@ public class FilmDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_film_detail);
-
         FirebaseApp.initializeApp(this);
 
         // Initialize views
@@ -51,13 +51,16 @@ public class FilmDetailActivity extends AppCompatActivity {
         ImageButton backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> onBackPressed());
 
+        String filmId = getIntent().getStringExtra("FILM_ID");
+        String videoUrl = getIntent().getStringExtra("VIDEO_URL");
+
         // Fetch data from Firebase
-        fetchDataFromFirebase();
+        fetchDataFromFirebase(filmId, videoUrl);
     }
 
-    private void fetchDataFromFirebase() {
+    private void fetchDataFromFirebase(String filmId, String videoUrl) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference filmRef = database.getReference("trailers").child("f1"); // Replace "your_film_id" with the actual ID
+        DatabaseReference filmRef = database.getReference("trailers").child(filmId);
 
         filmRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -78,11 +81,7 @@ public class FilmDetailActivity extends AppCompatActivity {
                     tvCountry.setText(country);
                     tvRating.setText(rating);
 
-                    String videoUrl = "https://firebasestorage.googleapis.com/v0/b/film-f8b47.appspot.com/o/y2mate.com%20-%20EXHUMA%20QU%E1%BA%ACT%20M%E1%BB%98%20TR%C3%99NG%20MA%20%20KC%2015032024_1080p.mp4?alt=media&token=f975106d-4677-4918-aa72-37b167dd311c";
                     Uri videoUri = Uri.parse(videoUrl);
-
-                    // Setup MediaController
-
 
                     // Set video URI and start playing
                     videoContainer.setVideoURI(videoUri);
