@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.MediaController;
@@ -24,6 +26,7 @@ import vn.superandroid.logo.R;
 public class FilmDetailActivity extends AppCompatActivity {
 
     private VideoView videoContainer;
+    private Button playBtn,stopBtn;
     private TextView tvFilmName, tvGenre, tvYear, tvDuration, tvCountry, tvRating;
 
     @Override
@@ -35,6 +38,8 @@ public class FilmDetailActivity extends AppCompatActivity {
 
         // Initialize views
         videoContainer = findViewById(R.id.videoContainer);
+        playBtn = (Button) findViewById(R.id.playBtn);
+        stopBtn = (Button) findViewById(R.id.stopBtn);
         tvFilmName = findViewById(R.id.tvTitle);
         tvGenre = findViewById(R.id.tvGenres);
         tvYear = findViewById(R.id.tvYear);
@@ -77,13 +82,14 @@ public class FilmDetailActivity extends AppCompatActivity {
                     Uri videoUri = Uri.parse(videoUrl);
 
                     // Setup MediaController
-                    MediaController mediaController = new MediaController(FilmDetailActivity.this);
-                    mediaController.setAnchorView(videoContainer);
-                    videoContainer.setMediaController(mediaController);
+
 
                     // Set video URI and start playing
                     videoContainer.setVideoURI(videoUri);
-                    videoContainer.setOnPreparedListener(mp -> videoContainer.start());
+                    videoContainer.requestFocus();
+
+                    playBtn.setOnClickListener(v -> videoContainer.start());
+                    stopBtn.setOnClickListener(v -> videoContainer.pause());
                 }
             }
 
