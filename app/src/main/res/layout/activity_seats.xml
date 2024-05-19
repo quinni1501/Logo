@@ -14,9 +14,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <include
-            android:id="@+id/appBarMoviesSeat"
-            layout="@layout/layout_app_bar_movies_seat" />
+        <!-- Include custom toolbar -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:id = "@+id/appBarMoviesSeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <include layout="@layout/layout_app_bar_movies_seat"/>
+        </com.google.android.material.appbar.AppBarLayout>
 
         <FrameLayout
             android:id="@+id/flCinemaScreenMoviesSeat"
@@ -27,12 +33,12 @@
             android:layout_marginTop="-25dp"
             android:layout_marginEnd="22dp">
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="176dp"
                 app:srcCompat="@drawable/ellipse_screen" />
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <ImageView
                 android:layout_width="100dp"
                 android:layout_height="57dp"
                 android:layout_gravity="center|bottom"
@@ -64,7 +70,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="Normal (4500ks)"
+                    android:text="Normal (55.000đ)"
                     android:textStyle="bold"
                     android:textColor="#4C4949"
                     android:textSize="16sp" />
@@ -129,7 +135,7 @@
                 android:layout_gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <androidx.appcompat.widget.AppCompatImageView
+                <ImageView
                     android:layout_width="8dp"
                     android:layout_height="8dp"
                     android:layout_gravity="center_vertical"
@@ -137,7 +143,7 @@
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/white_dot" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
@@ -155,7 +161,7 @@
                 android:layout_marginEnd="45dp"
                 android:orientation="horizontal">
 
-                <androidx.appcompat.widget.AppCompatImageView
+                <ImageView
                     android:layout_width="8dp"
                     android:layout_height="8dp"
                     android:layout_gravity="center_vertical"
@@ -163,7 +169,7 @@
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/grey_dot" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
@@ -179,7 +185,7 @@
                 android:layout_gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <androidx.appcompat.widget.AppCompatImageView
+                <ImageView
                     android:layout_width="8dp"
                     android:layout_height="8dp"
                     android:layout_gravity="center_vertical"
@@ -187,7 +193,7 @@
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/accent_dot" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
@@ -208,14 +214,14 @@
             android:layout_marginTop="30dp"
             android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <ImageView
                 android:layout_width="18dp"
                 android:layout_height="18dp"
                 android:layout_gravity="center_vertical"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/minus" />
 
-            <androidx.appcompat.widget.AppCompatSeekBar
+            <SeekBar
                 android:id="@+id/seekbarSeat"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
@@ -225,7 +231,7 @@
                 android:progressBackgroundTint="#4C4949"
                 android:progressTint="@color/white" />
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -249,7 +255,7 @@
                 android:layout_alignParentStart="true"
                 android:orientation="vertical">
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <TextView
                     android:id="@+id/tvNumberOfTicketsMoviesSeat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -257,7 +263,7 @@
                     android:textSize="18sp"
                     tools:text="2 Tickets" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <TextView
                     android:id="@+id/tvTicketPriceMoviesSeat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -267,7 +273,7 @@
 
             </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <ImageView
                 android:id="@+id/btnBuyButtonMoviesSeat"
                 android:layout_width="225dp"
                 android:layout_height="50dp"
