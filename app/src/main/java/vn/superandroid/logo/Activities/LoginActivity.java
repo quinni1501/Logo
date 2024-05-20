@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         mListUsers = new ArrayList<>();
         initUI();
         initListener();
-        //getListUsers();
+//        getListUsers();
     }
     private void getListUsers() {
         //Gọi Interface trong UserService
@@ -48,8 +48,10 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
                 if (response.isSuccessful()) {
                     mListUsers = response.body(); //nhận mảng Users
+                    Log.d("ab", response.message());
                 } else {
                     int statusCode = response.code();
+                    Log.d("status", String.valueOf(statusCode));
                 }
             }
             @Override
@@ -58,6 +60,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
     public interface UserCallback {
         void onUserReceived(User user);
     }
@@ -93,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initListener() {
-        //Nhấn SignUp
+        // Nhấn SignUp
         layoutSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

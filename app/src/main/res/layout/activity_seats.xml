@@ -269,7 +269,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#36EF3E"
                     android:textSize="20sp"
-                    tools:text="17000KS" />
+                    tools:text="110.000Đđ" />
 
             </LinearLayout>
 

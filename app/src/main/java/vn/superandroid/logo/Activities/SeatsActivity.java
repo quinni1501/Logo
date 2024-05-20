@@ -2,15 +2,20 @@ package vn.superandroid.logo.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.otaliastudios.zoom.ZoomLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +27,10 @@ public class SeatsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private MoviesSeatAdapter adapter;
     private List<String> seatList;
+    private TextView tickets, price;
     Button buyBtn;
     ImageButton backBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +45,9 @@ public class SeatsActivity extends AppCompatActivity {
         buyBtn = findViewById(R.id.btnBuyButtonMoviesSeat);
         backBtn = findViewById(R.id.backButton);
         recyclerView = findViewById(R.id.rvSeatsMoviesSeat);
+        tickets = findViewById(R.id.tvNumberOfTicketsMoviesSeat);
+        price = findViewById(R.id.tvTicketPriceMoviesSeat);
+
         // Grid Layout là để hiển thị theo dạng cột, 1 hàng sẽ có 8 cột
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 8);
         recyclerView.setLayoutManager(gridLayoutManager);
@@ -68,7 +78,7 @@ public class SeatsActivity extends AppCompatActivity {
         buyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SeatsActivity.this, ComboSnacksActivity.class);
+                Intent intent = new Intent(SeatsActivity.this, PayingActivity.class);
                 startActivity(intent);
             }
         });
@@ -80,5 +90,38 @@ public class SeatsActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        //Seekbar
+        SeekBar seekBar = (SeekBar) findViewById(R.id.seekbarSeat);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                //progress: giá trị của seekbar
+                ZoomLayout zoomLayoutSeat = findViewById(R.id.zoomLayoutSeat);
+                float zoomLevel = (progress / 100f) * (zoomLayoutSeat.getMaxZoom() - zoomLayoutSeat.getMinZoom()) + zoomLayoutSeat.getMinZoom();
+                zoomLayoutSeat.zoomTo(zoomLevel, false);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // Log.d("AAA","Start");
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                //   Log.d("AAA","Stop");
+            }
+        });
+        tickets.setText(String.valueOf(adapter.selected));
+        price.setText(String.valueOf(adapter.selected * 55000));
+        tickets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tickets.setText(String.valueOf(adapter.selected));
+                price.setText(String.valueOf(adapter.selected * 55000));
+            }
+        });
+
+
     }
 }
