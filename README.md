@@ -11,7 +11,8 @@
 ## 3. API
 - Users:
 ```
-{
+[
+    {
         "userId": 1,
         "username": "anhthu",
         "password": "123",
@@ -62,11 +63,11 @@
         "userPhone": "0853002471"
     }
 ]
+
 ```
 
 - Category:
   ```
-  [
     {
         "categoryId": 1,
         "name": "Mystery"
@@ -99,6 +100,4 @@
         "categoryId": 8,
         "name": "Animation"
     }
-]
-```
-
+  ```
