@@ -106,3 +106,34 @@
     [Category](http://192.168.97.222:8188/api/moviecategory?fbclid=IwZXh0bgNhZW0CMTAAAR0InFX6KQRUCKOgqqdGlAB5ehGXXjQ_jJjiLDuQRb9y8OmuvprNgm-l7eQ_aem_AfuT0Nw1auSYN8dQdQBKAaTQseksTSpPFdeOkFfC_sxQBq5nXAimkqOwdv7e1OUZHQMxW-EeAaHJcZmNPMUO3KW7)
 
 ## 4. Giao Diện App
+   - SplashActivity:
+     ![image](https://github.com/quinni1501/Logo/assets/169877289/a8441145-c908-4107-9b3e-a1da133984a5)
+   - MainActivity:
+     ![image](https://github.com/quinni1501/Logo/assets/169877289/8dd2f336-72f1-4feb-9244-0881310ec6ea)
+   - FilmActivity:
+     ![image](https://github.com/quinni1501/Logo/assets/169877289/3a72173a-fe26-493c-b168-6ee6676ae60e)
+  - DetailFilmActivity:
+    ![image](https://github.com/quinni1501/Logo/assets/169877289/3b60dac3-f290-4abd-8cd3-d29bb408b6f6)
+  - ShowtimesActivity:
+    ![image](https://github.com/quinni1501/Logo/assets/169877289/e375d833-d280-456d-b03c-570f402d9420)
+  - SeatsActivity:
+    ![image](https://github.com/quinni1501/Logo/assets/169877289/a4b2634a-4033-4532-a9e6-bd1aacb0b24b)
+    ![image](https://github.com/quinni1501/Logo/assets/169877289/7271eb17-f1c3-48df-accd-9f487fb97f07)
+  -  VoucherActivity:
+    ![image](https://github.com/quinni1501/Logo/assets/169877289/aaea8e82-d804-43c8-947f-a9a8cdaaa187)
+ - ProfileActivity:
+   ![image](https://github.com/quinni1501/Logo/assets/169877289/bd26de97-fe3f-4201-a58a-c12749e132d9)
+ - LoginActivity:
+   ![image](https://github.com/quinni1501/Logo/assets/169877289/9c466b0e-cd75-428e-8d15-8f6397eaa1bd)
+ - SignUpActivity:
+   ![image](https://github.com/quinni1501/Logo/assets/169877289/d635f0b1-cc29-407a-9717-82fb4153076f)
+
+ 
+
+
+
+ 
+
+
+
+
