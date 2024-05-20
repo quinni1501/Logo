@@ -11,7 +11,8 @@
 ## 3. API
 - Users:
 ```
-{
+[
+    {
         "userId": 1,
         "username": "anhthu",
         "password": "123",
@@ -62,11 +63,12 @@
         "userPhone": "0853002471"
     }
 ]
+
 ```
 
 - Category:
-  ```
-  [
+```
+[
     {
         "categoryId": 1,
         "name": "Mystery"
@@ -101,4 +103,6 @@
     }
 ]
 ```
-
+  - Links API:
+    [Users](http://192.168.97.222:8188/api/users?fbclid=IwZXh0bgNhZW0CMTAAAR2wZEkzZVgfcu5tGCVXlyEqpgtZ9azloPNwIkp4YjesWG8mbjPBQ6GLBeM_aem_AfvoM2Qus7PvU5KLEJyrRn8Ilg9G0ee7U5XrzkU6fKzQl_hg9cPdPEsnYGw-lKXYgUbfGWmOn6nMlUkIul83DLlR)
+    [Category](http://192.168.97.222:8188/api/moviecategory?fbclid=IwZXh0bgNhZW0CMTAAAR0InFX6KQRUCKOgqqdGlAB5ehGXXjQ_jJjiLDuQRb9y8OmuvprNgm-l7eQ_aem_AfuT0Nw1auSYN8dQdQBKAaTQseksTSpPFdeOkFfC_sxQBq5nXAimkqOwdv7e1OUZHQMxW-EeAaHJcZmNPMUO3KW7)
