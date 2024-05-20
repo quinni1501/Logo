@@ -10,3 +10,56 @@
 
 ## 3. API
 - Users:
+```
+{
+        "userId": 1,
+        "username": "anhthu",
+        "password": "123",
+        "userAvatar": "",
+        "userFullname": "Anh Thư",
+        "userGender": "N?",
+        "userEmail": "anhthu@gmail.com",
+        "userPhone": "0123456789"
+    },
+    {
+        "userId": 2,
+        "username": "phuongnguyen",
+        "password": "456",
+        "userAvatar": "",
+        "userFullname": "Đông Phương",
+        "userGender": "N?",
+        "userEmail": "phuongnguyen@gmail.com",
+        "userPhone": "9876543210"
+    },
+    {
+        "userId": 3,
+        "username": "huongquyen",
+        "password": "789",
+        "userAvatar": "",
+        "userFullname": "Hương Quyên",
+        "userGender": "N?",
+        "userEmail": "huongquyen@gmail.com",
+        "userPhone": "0147258369"
+    },
+    {
+        "userId": 5,
+        "username": "truongthu",
+        "password": "147",
+        "userAvatar": "",
+        "userFullname": "Trương Thư",
+        "userGender": "N?",
+        "userEmail": "truongthu@gmail.com",
+        "userPhone": "0963825741"
+    },
+    {
+        "userId": 9,
+        "username": "tnat8628",
+        "password": "123",
+        "userAvatar": "N?",
+        "userFullname": "Trương Nguyễn Anh Thư",
+        "userGender": "N?",
+        "userEmail": "truongthu8628@gmail.com",
+        "userPhone": "0853002471"
+    }
+]
+```
