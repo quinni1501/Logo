@@ -1,9 +1,7 @@
 # **CHI TIẾT HƯỚNG DẪN XÂY DỰNG VÀ PHÁT TRIỂN TỪNG CHỨC NĂNG CỦA ỨNG DỤNG ĐẶT VÉ XEM PHIM**
 ----
 ## 1. Usecase Diagram
-![image](https://github.com/quinni1501/Logo/assets/167750800/b963b620-b804-4e48-bd08-ecfbd351b3a3)
-![image](https://github.com/quinni1501/Logo/assets/167750800/c60981e6-baf8-4c8d-b8f5-8fd9f8f3bf48)
-![image](https://github.com/quinni1501/Logo/assets/167750800/77a1490c-13d1-4524-b5e9-77cb59445d3f)
+![new](https://github.com/quinni1501/Logo/assets/167750800/9c5482fe-3473-4876-9e7b-3b8edbd7927d)
 
 ## 2. Sequence Diagram
 ![image](https://github.com/quinni1501/Logo/assets/167750800/6da19a94-0bfb-47e4-b3c2-5d8aadd84e94)
@@ -106,3 +104,5 @@
   - Links API:
     [Users](http://192.168.97.222:8188/api/users?fbclid=IwZXh0bgNhZW0CMTAAAR2wZEkzZVgfcu5tGCVXlyEqpgtZ9azloPNwIkp4YjesWG8mbjPBQ6GLBeM_aem_AfvoM2Qus7PvU5KLEJyrRn8Ilg9G0ee7U5XrzkU6fKzQl_hg9cPdPEsnYGw-lKXYgUbfGWmOn6nMlUkIul83DLlR)
     [Category](http://192.168.97.222:8188/api/moviecategory?fbclid=IwZXh0bgNhZW0CMTAAAR0InFX6KQRUCKOgqqdGlAB5ehGXXjQ_jJjiLDuQRb9y8OmuvprNgm-l7eQ_aem_AfuT0Nw1auSYN8dQdQBKAaTQseksTSpPFdeOkFfC_sxQBq5nXAimkqOwdv7e1OUZHQMxW-EeAaHJcZmNPMUO3KW7)
+
+## 4. Giao Diện App
