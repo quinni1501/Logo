@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -78,8 +79,7 @@ public class SeatsActivity extends AppCompatActivity {
         buyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SeatsActivity.this, PayingActivity.class);
-                startActivity(intent);
+                Toast.makeText(SeatsActivity.this, "Bạn đã đặt vé thành công", Toast.LENGTH_SHORT).show();
             }
         });
 

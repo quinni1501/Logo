@@ -13,7 +13,7 @@ import vn.superandroid.logo.R;
 
 public class ShowtimesActivity extends AppCompatActivity {
 
-    Button gioBtn;
+    Button gioBtn1, gioBtn2, gioBtn3;
     ImageButton backBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +27,34 @@ public class ShowtimesActivity extends AppCompatActivity {
 
 
         //ánh xạ
-        gioBtn = findViewById(R.id.btn920);
+        gioBtn1 = findViewById(R.id.btn920);
+        gioBtn2 = findViewById(R.id.btn9202);
+        gioBtn3 = findViewById(R.id.btn9203);
         backBtn = findViewById(R.id.backButton);
-        gioBtn.setOnClickListener(new View.OnClickListener() {
+        gioBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ShowtimesActivity.this, SeatsActivity.class); // Thay thế ShowtimesActivity bằng SeatsActivity
                 startActivity(intent);
             }
         });
+
+        gioBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ShowtimesActivity.this, SeatsActivity.class); // Thay thế ShowtimesActivity bằng SeatsActivity
+                startActivity(intent);
+            }
+        });
+
+        gioBtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ShowtimesActivity.this, SeatsActivity.class); // Thay thế ShowtimesActivity bằng SeatsActivity
+                startActivity(intent);
+            }
+        });
+
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
