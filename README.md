@@ -67,42 +67,42 @@
 ```
 
 - Category:
-  ```
-    [
-        {
-            "categoryId": 1,
-            "name": "Mystery"
-        },
-        {
-            "categoryId": 2,
-            "name": "Thriller"
-        },
-        {
-            "categoryId": 3,
-            "name": "Fantasy"
-        },
-        {
-            "categoryId": 4,
-            "name": "Adventure"
-        },
-        {
-            "categoryId": 5,
-            "name": "Comedy"
-        },
-        {
-            "categoryId": 6,
-            "name": "Romance"
-        },
-        {
-            "categoryId": 7,
-            "name": "Horror"
-        },
-        {
-            "categoryId": 8,
-            "name": "Animation"
-        }
-  ]
-  ```
+```
+[
+    {
+        "categoryId": 1,
+        "name": "Mystery"
+    },
+    {
+        "categoryId": 2,
+        "name": "Thriller"
+    },
+    {
+        "categoryId": 3,
+        "name": "Fantasy"
+    },
+    {
+        "categoryId": 4,
+        "name": "Adventure"
+    },
+    {
+        "categoryId": 5,
+        "name": "Comedy"
+    },
+    {
+        "categoryId": 6,
+        "name": "Romance"
+    },
+    {
+        "categoryId": 7,
+        "name": "Horror"
+    },
+    {
+        "categoryId": 8,
+        "name": "Animation"
+    }
+]
+```
   - Links API:
     [Users](http://192.168.97.222:8188/api/users?fbclid=IwZXh0bgNhZW0CMTAAAR2wZEkzZVgfcu5tGCVXlyEqpgtZ9azloPNwIkp4YjesWG8mbjPBQ6GLBeM_aem_AfvoM2Qus7PvU5KLEJyrRn8Ilg9G0ee7U5XrzkU6fKzQl_hg9cPdPEsnYGw-lKXYgUbfGWmOn6nMlUkIul83DLlR)
     [Category](http://192.168.97.222:8188/api/moviecategory?fbclid=IwZXh0bgNhZW0CMTAAAR0InFX6KQRUCKOgqqdGlAB5ehGXXjQ_jJjiLDuQRb9y8OmuvprNgm-l7eQ_aem_AfuT0Nw1auSYN8dQdQBKAaTQseksTSpPFdeOkFfC_sxQBq5nXAimkqOwdv7e1OUZHQMxW-EeAaHJcZmNPMUO3KW7)
