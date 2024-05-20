@@ -36,7 +36,7 @@
             android:name=".Activities.FilmDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.SplashActivity"
+            android:name=".Activities.GiftActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.PayingActivity"
@@ -60,7 +60,7 @@
             android:name=".Activities.ComboSnacksActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.GiftActivity"
+            android:name=".Activities.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>

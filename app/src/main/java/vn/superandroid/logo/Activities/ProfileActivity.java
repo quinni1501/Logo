@@ -87,7 +87,6 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void initListener() {
-        Boolean checkChooseImg;
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,7 +102,6 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showDialog();
-                    //onClickRequestPermission();
             }
         });
 
@@ -139,8 +137,15 @@ public class ProfileActivity extends AppCompatActivity {
         chooseImgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
                 onClickRequestPermission();
+            }
+        });
+
+        uploadImgBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                Toast.makeText(ProfileActivity.this, "Cập nhật thành công", Toast.LENGTH_SHORT).show();
             }
         });
 

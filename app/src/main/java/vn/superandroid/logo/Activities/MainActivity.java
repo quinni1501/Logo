@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -122,8 +123,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        getListCategory();
-        recyclerViewCategory();
+        getListCategory(new CategoryCallback() {
+            @Override
+            public void onCategoryReceived(List<Category> mListCategory) {
+                if(mListCategory != null) {
+                    recyclerViewCategory();
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Category rỗng", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
     }
 
 
@@ -139,16 +150,21 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Images(R.drawable.banner8));
         return list;
     }
-    private void getListCategory() {
+    public interface CategoryCallback {
+        void onCategoryReceived(List<Category> mListCategory);
+    }
+    private void getListCategory(CategoryCallback callback) {
         //Gọi Interface trong CategoryService
         categoryService = RetrofitClient.getRetrofit().create(CategoryService.class);
         categoryService.getListCategory().enqueue(new Callback<List<Category>>() {
             @Override
             public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
                 if (response.isSuccessful()) {
-                    mListCategory = response.body(); //nhận mảng Users
+                    mListCategory = response.body(); //nhận mảng Category
+                    callback.onCategoryReceived(mListCategory);
                 } else {
                     int statusCode = response.code();
+                    callback.onCategoryReceived(null); // Gọi lại với giá trị null nếu không thành công
                 }
             }
             @Override
