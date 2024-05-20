@@ -63,3 +63,42 @@
     }
 ]
 ```
+
+- Category:
+  ```
+  [
+    {
+        "categoryId": 1,
+        "name": "Mystery"
+    },
+    {
+        "categoryId": 2,
+        "name": "Thriller"
+    },
+    {
+        "categoryId": 3,
+        "name": "Fantasy"
+    },
+    {
+        "categoryId": 4,
+        "name": "Adventure"
+    },
+    {
+        "categoryId": 5,
+        "name": "Comedy"
+    },
+    {
+        "categoryId": 6,
+        "name": "Romance"
+    },
+    {
+        "categoryId": 7,
+        "name": "Horror"
+    },
+    {
+        "categoryId": 8,
+        "name": "Animation"
+    }
+]
+```
+
