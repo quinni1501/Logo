@@ -106,8 +106,7 @@
     [Category](http://192.168.97.222:8188/api/moviecategory?fbclid=IwZXh0bgNhZW0CMTAAAR0InFX6KQRUCKOgqqdGlAB5ehGXXjQ_jJjiLDuQRb9y8OmuvprNgm-l7eQ_aem_AfuT0Nw1auSYN8dQdQBKAaTQseksTSpPFdeOkFfC_sxQBq5nXAimkqOwdv7e1OUZHQMxW-EeAaHJcZmNPMUO3KW7)
 
 ## 4. Giao Diện App
-   - SplashActivity:
-     ![image](https://github.com/quinni1501/Logo/assets/169877289/a8441145-c908-4107-9b3e-a1da133984a5)
+   - SplashActivity: ![image](https://github.com/quinni1501/Logo/assets/169877289/a8441145-c908-4107-9b3e-a1da133984a5)
    - MainActivity:
      ![image](https://github.com/quinni1501/Logo/assets/169877289/8dd2f336-72f1-4feb-9244-0881310ec6ea)
    - FilmActivity:
